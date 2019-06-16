@@ -1,0 +1,166 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MemeTension</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <style>
+        html,
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            height: 520px;
+            width: 384px;
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: 400;
+            margin: 0;
+            color: red;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(255, 0, 0);
+            transition: .3s;
+        }
+
+        a:hover {
+            color: rgb(144, 0, 0);
+        }
+
+        .modal-header {
+            padding: 15px;
+            border-bottom: 1px solid #dadada;
+        }
+
+        .modal-header p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        #version {
+            border: none;
+            background: #999999;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            transition: .5s;
+            outline: none;
+        }
+
+        #version:hover {
+            background: #ddd;
+            color: #999999;
+        }
+
+        .modal-content {
+            padding: 0 15px;
+            border-bottom: 1px solid #dadada;
+        }
+
+        .modal-images {
+            max-width: 100%;
+            display: grid;
+            margin-top: 15px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas: ". . ."". . ."". . .";
+            grid-gap: 10px;
+            justify-content: space-around;
+            max-height: 424px;
+            overflow-y: auto;
+            height: 310px;
+        }
+
+        .modal-images img {
+            width: 96px;
+            height: 96px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .modal-filter {
+            padding-top: 10px;
+            width: 100%;
+            display: flex;
+        }
+
+        .modal-filter input {
+            flex: 3;
+            display: block;
+            text-align: center;
+            border: 1px solid #dadada;
+            border-radius: 5px;
+            padding: 4px;
+            margin: 0 5px;
+            outline: none;
+            transition: .5s;
+        }
+
+        .modal-filter input:focus {
+            background: #eeeeee;
+        }
+
+        .modal-filter button {
+            flex: 2;
+            background: transparent;
+            border: 1px solid #dadada;
+            border-radius: 5px;
+            margin-right: 5px;
+            transition: .5s;
+        }
+
+        .modal-filter button:hover {
+            background: #eeeeee;
+        }
+
+        .modal-filter button:focus {
+            outline: none;
+            background-color: #dddddd;
+        }
+
+        #filter_reset_btn {
+            flex: 1;
+            width: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="modal-header">
+        <h1 class="logo">
+            <img src="logo.png" alt="Logo" class="logo-icon">
+            MemeTension <button id="version">1.1.0</button>
+            <p>by <a href="mailto:jurigadominik@gmail.com">wex</a>.</p>
+        </h1>
+    </div>
+
+    <div class="modal-content" style="text-align: center;">
+        <p>Spice up your casual conversations with dank memes. Just copy & paste into chat.</p>
+    </div>
+
+    <div class="modal-images" id="img_target">
+    </div>
+
+    <div class="modal-filter">
+        <input type="text" id="filter_input" placeholder="Filter..">
+        <button id="filter_btn">Search</button>
+        <button id="filter_reset_btn">Reset</button>
+    </div>
+
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
