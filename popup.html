@@ -71,6 +71,13 @@
             color: #999999;
         }
 
+        #dark_mode {
+            background: transparent;
+            border: none;
+            outline: none;
+            height: 30px;
+        }
+
         .modal-content {
             padding: 0 15px;
             border-bottom: 1px solid #dadada;
@@ -157,6 +164,11 @@
             outline: none;
             background-color: #dddddd;
         }
+
+        .dark {
+            background: #222222;
+            color: white;
+        }
     </style>
 
 </head>
@@ -166,7 +178,12 @@
         <h1 class="logo">
             <div class="top">
                 <img src="logo.png" alt="Logo" class="logo-icon">
-                <h1> MemeTension </h1><button id="version">1.1.2</button>
+                <h1> MemeTension </h1>
+                <button id="version">1.1.2</button>
+                <button id="dark_mode">
+                    <img src="/img/ico/bulb_b.png" style="height: 100%;" id="bulb_d">
+                    <img src="/img/ico/bulb_w.png" style="height: 100%; display: none;" id="bulb_l">
+                </button>
             </div>
             <p>by <a href="mailto:jurigadominik@gmail.com">wex</a>.</p>
         </h1>
@@ -181,7 +198,10 @@
 
     <div class="modal-filter">
         <input type="text" id="filter_input" placeholder="Filter..">
-        <button id="reset_btn"><img style="width: 16px;" src="/img/ico/eraser.png" alt=""></button>
+        <button id="reset_btn">
+            <img style="width: 16px;" src="/img/ico/eraser.png" id="eraser_d">
+            <img style="width: 16px; display: none;" src="/img/ico/eraser_w.png" id="eraser_l">
+        </button>
     </div>
 
 

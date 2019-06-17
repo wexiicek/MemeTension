@@ -6,6 +6,7 @@
     "icons": {
         "128": "logo_128.png"
     },
+    "author": "Dominik Juriga",
     "browser_action": {
         "default_icon": "logo.png",
         "default_popup": "popup.html"
