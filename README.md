@@ -4,7 +4,7 @@ This Chrome Extension allows you to access a series of handpicked memes, that yo
 ## Requirements
 A recent version of Google Chrome, Chromium Microsoft Edge or other Chromium based browser.
 
-## Instalation
+## Installation
 ### Unpacked version (downloaded from GitHub)
 Save the folder. Open Chrome Extension page, enable Developer Mode and select Load Unpacked. Locate the folder.
 
