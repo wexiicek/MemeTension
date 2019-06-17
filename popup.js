@@ -32,11 +32,13 @@ function loadAll() {
     });
 }
 
+//Function checks if the user query matches
+//the tags of the given image
 function filter_fits(data) {
     var query = filter_input.value;
 
     for (var i = 0; i < data.length; i++) {
-        if (data[i].startsWith(query)) {
+        if (data[i].startsWith(query.toLowerCase())) {
             return true;
         }
     }
@@ -44,13 +46,14 @@ function filter_fits(data) {
     return false;
 }
 
+//Function displays images according to the user query
 function searching() {
-    target.innerHTML = ''; //Resetting the content of the div
+    target.innerHTML = ""; //Resetting the content of the div
 
     filter_input = document.getElementById("filter_input");
 
     //If the search bar is empty, return all images
-    if (filter_input.value == '' ||
+    if (filter_input.value == "" ||
         filter_input.value == null) {
         loadAll();
         return;
@@ -72,24 +75,31 @@ function searching() {
     });
 }
 
+//If user starts typing in the filter field,
+//perform a search
 filter_input.addEventListener("input", function () {
     searching();
 });
 
+//If the user wishes to remove the filter
 reset_btn.addEventListener("click", function () {
-    filter_input.value = "";
-    searching();
+    filter_input.value = ""; //Remove the filter query
+    target.innerHTML = ""; //Resetting the content of target
+    loadAll(); //Load all images
 })
 
 //Loading all images on document load
 document.addEventListener("load", loadAll());
 
+//If user starts typing without selecting
+//the field, select the field for him
 document.addEventListener("keypress", function (e) {
-    if (filter_input.value == '') {
+    if (filter_input.value == "") {
         filter_input.select();
     }
 })
 
+//Show an alert with version updates
 version_button.addEventListener("click", function () {
     alert(
         "Version 1.1.2\n" +
