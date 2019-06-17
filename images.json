@@ -1,28 +1,24 @@
 {
     "images": {
+
+        "cringe": {
+            "name": "cringe",
+            "tags": ["harold", "cringe"]
+        },
+
         "hyper_cringe": {
             "name": "hyper_cringe",
-            "tags": ["harold", "cringe", "kek"]
+            "tags": ["harold", "cringe", "kek", "hyper"]
         },
 
-        "sad_crying_cat": {
-            "name": "sad_crying_cat",
-            "tags": ["cat", "sad", "crying"]
+        "hyper_drake_yea": {
+            "name": "hyper_drake_yea",
+            "tags": ["hyper", "drake", "yea"]
         },
 
-        "hypers": {
-            "name": "hypers",
-            "tags": ["happy", "smile"]
-        },
-
-        "be_gone": {
-            "name": "be_gone",
-            "tags": ["soldier", "gone", "away"]
-        },
-
-        "confused_wat": {
-            "name": "confused_wat",
-            "tags": ["confused", "black", "?"]
+        "hyper_bob": {
+            "name": "hyper_bob",
+            "tags": ["hyper", "bob", "kek"]
         },
 
         "cool_story_bob": {
@@ -30,19 +26,14 @@
             "tags": ["bob", "wholesome", "ross", "cool"]
         },
 
-        "cough": {
-            "name": "cough",
-            "tags": ["coughing", "cat"]
+        "sad_crying_cat": {
+            "name": "sad_crying_cat",
+            "tags": ["cat", "sad", "crying", "animal"]
         },
 
-        "cringe": {
-            "name": "cringe",
-            "tags": ["harold", "cringe"]
-        },
-
-        "doge_kek": {
-            "name": "doge_kek",
-            "tags": ["doge", "kek", "lul"]
+        "confused_wat": {
+            "name": "confused_wat",
+            "tags": ["confused", "black", "?"]
         },
 
         "rtzW": {
@@ -50,19 +41,34 @@
             "tags": ["rtzw", "kek", "lul"]
         },
 
+        "doge_kek": {
+            "name": "doge_kek",
+            "tags": ["doge", "kek", "lul", "animal"]
+        },
+
+        "cough": {
+            "name": "cough",
+            "tags": ["coughing", "cat", "animal"]
+        },
+
+        "be_gone": {
+            "name": "be_gone",
+            "tags": ["soldier", "gone", "away"]
+        },
+
         "tom": {
             "name": "tom",
-            "tags": ["tom", "what", "surprised"]
+            "tags": ["tom", "what", "surprised", "animal"]
+        },
+
+        "pooh": {
+            "name": "pooh",
+            "tags": ["winnie", "pooh", "suit", "animal"]
         },
 
         "ricardo": {
             "name": "ricardo",
             "tags": ["ricardo", "milos", "damn"]
-        },
-
-        "pooh": {
-            "name": "pooh",
-            "tags": ["winnie", "pooh", "suit"]
         },
 
         "PogCorn": {
@@ -75,29 +81,49 @@
             "tags": ["pog", "pogchamp", "kek"]
         },
 
+        "pathos": {
+            "name": "pathos",
+            "tags": ["patrick", "thanos", "kek", "animal"]
+        },
+
+        "hypers": {
+            "name": "hypers",
+            "tags": ["happy", "smile", "animal"]
+        },
+
         "pepega": {
             "name": "pepega",
-            "tags": ["pepega", "pepe", "kek"]
+            "tags": ["pepega", "pepe", "kek", "animal"]
         },
 
         "peepolove": {
             "name": "peepolove",
-            "tags": ["peepo", "love", "heart"]
-        },
-
-        "pathos": {
-            "name": "pathos",
-            "tags": ["patrick", "thanos", "kek"]
+            "tags": ["peepo", "love", "heart", "animal"]
         },
 
         "monkaW": {
             "name": "monkaW",
-            "tags": ["monka", "scary", "ohshit"]
+            "tags": ["monka", "scary", "ohshit", "animal"]
         },
 
         "monga_mega": {
             "name": "monga_mega",
-            "tags": ["monka", "mega", "scary"]
+            "tags": ["monka", "mega", "scary", "animal"]
+        },
+
+        "feels_coffee_man": {
+            "name": "feels_coffee_man",
+            "tags": ["coffee", "sad", "animal", "monka"]
+        },
+
+        "feels_cop_man": {
+            "name": "feels_cop_man",
+            "tags": ["gun", "cop", "animal", "monka"]
+        },
+
+        "heHeh": {
+            "name": "heHeh",
+            "tags": ["monka", "hmmm", "interesting", "animal"]
         },
 
         "lul": {
@@ -120,16 +146,6 @@
             "tags": ["jack", "black", "stop"]
         },
 
-        "hyper_drake_yea": {
-            "name": "hyper_drake_yea",
-            "tags": ["hyper", "drake", "yea"]
-        },
-
-        "heHeh": {
-            "name": "heHeh",
-            "tags": ["pepe", "hmmm", "interesting"]
-        },
-
         "wokeaf": {
             "name": "wokeaf",
             "tags": ["woke", "af", "hyper"]
@@ -142,27 +158,12 @@
 
         "flower_cat": {
             "name": "flower_cat",
-            "tags": ["flower", "cat", "confused"]
-        },
-
-        "feels_cop_man": {
-            "name": "feels_cop_man",
-            "tags": ["pepe", "gun", "cop"]
-        },
-
-        "feels_coffee_man": {
-            "name": "feels_coffee_man",
-            "tags": ["coffee", "pepe", "sad"]
+            "tags": ["flower", "cat", "confused", "animal"]
         },
 
         "cheeki_breeki": {
             "name": "cheeki_breeki",
             "tags": ["cheeki", "breeky", "slav"]
-        },
-
-        "hyper_bob": {
-            "name": "hyper_bob",
-            "tags": ["hyper", "bob", "kek"]
         }
 
     }

@@ -43,19 +43,29 @@
             border-bottom: 1px solid #dadada;
         }
 
+        .modal-header .logo h1 {
+            margin-left: 10px;
+        }
+
         .modal-header p {
             margin: 0;
             font-size: 16px;
+        }
+
+        .modal-header .top {
+            display: flex;
+            align-content: center;
         }
 
         #version {
             border: none;
             background: #999999;
             color: white;
-            padding: 5px;
+            padding: 5px 10px;
             border-radius: 5px;
             transition: .5s;
             outline: none;
+            margin-left: 10px;
         }
 
         #version:hover {
@@ -140,8 +150,10 @@
 <body>
     <div class="modal-header">
         <h1 class="logo">
-            <img src="logo.png" alt="Logo" class="logo-icon">
-            MemeTension <button id="version">1.1.0</button>
+            <div class="top">
+                <img src="logo.png" alt="Logo" class="logo-icon">
+                <h1> MemeTension </h1><button id="version">1.1.0</button>
+            </div>
             <p>by <a href="mailto:jurigadominik@gmail.com">wex</a>.</p>
         </h1>
     </div>

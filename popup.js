@@ -4,7 +4,11 @@ var version_button = document.getElementById("version");
 var target = document.getElementById("img_target");
 
 
-
+/*
+? For some reason, the filter input is empty and therefore
+? the search feature is not working at all
+*/
+var filter_input = document.getElementById("filter_input");
 //Function that loads all images in the storage
 //into the HTML code
 function loadAll() {
@@ -37,8 +41,22 @@ version_button.addEventListener("click", function () {
     );
 })
 
+//Loading selected images after filter button is pressed
+filter_btn.addEventListener("click", function () {
+    searching();
+})
+
+
+document.addEventListener("keypress", function (e) {
+    if (e.keyCode == 13) {
+        searching();
+    }
+})
+
 function searching() {
     target.innerHTML = ''; //Resetting the content of the div
+
+    filter_input = document.getElementById("filter_input");
 
     //If the search bar is empty, return all images
     if (filter_input.value == '' ||
@@ -51,10 +69,7 @@ function searching() {
     readTextFile("images.json", function (text) {
         var data = JSON.parse(text);
         var i = 0;
-        console.log(i + filter_input.value);
         for (item in data.images) {
-            console.log(filter_input.value.toLowerCase() + "//" + Object.values(data.images)[i].tags);
-
             if (Object.values(data.images)[i].tags.indexOf(String(filter_input.value).toLowerCase()) > -1) {
                 var img = document.createElement("img");
                 img.src = "./img/" + Object.values(data.images)[i].name + ".png";
@@ -65,14 +80,11 @@ function searching() {
 
     });
 
-    filter_input.value = ""; //Resetting the search bar
+    //filter_input.value = ""; //Resetting the search bar
     return;
 }
 
-//Loading selected images after filter button is pressed
-filter_btn.addEventListener("click", function () {
-    searching();
-})
+
 
 //Function that loads images.json from the storage
 //Don't even ask, it's JS magicfuckery..
@@ -87,15 +99,3 @@ function readTextFile(file, callback) {
     }
     rawFile.send(null);
 }
-
-document.addEventListener("keypress", function (e) {
-    if (e.keyCode == 13) {
-        searching();
-    }
-})
-
-/*
-? For some reason, the filter input is empty and therefore
-? the search feature is not working at all
-*/
-var filter_input = document.getElementById("filter_input");
