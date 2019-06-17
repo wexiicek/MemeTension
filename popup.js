@@ -32,6 +32,18 @@ function loadAll() {
     });
 }
 
+function filter_fits(data) {
+    var query = filter_input.value;
+
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].startsWith(query)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 function searching() {
     target.innerHTML = ''; //Resetting the content of the div
 
@@ -49,7 +61,7 @@ function searching() {
         var data = JSON.parse(text);
         var i = 0;
         for (item in data.images) {
-            if (Object.values(data.images)[i].tags.indexOf(String(filter_input.value).toLowerCase()) > -1) {
+            if (filter_fits(Object.values(data.images)[i].tags)) {
                 var img = document.createElement("img");
                 img.src = "./img/" + Object.values(data.images)[i].name + ".png";
                 target.appendChild(img);
@@ -74,8 +86,11 @@ document.addEventListener("load", loadAll());
 
 version_button.addEventListener("click", function () {
     alert(
+        "Version 1.1.2\n" +
+        "Revamped filtering once again.\n" +
+        "  Filtering now supports dynamic results, user does not need to input a whole name of image\n\n" +
         "Version 1.1.1\n" +
-        "Revamped searching. Removed buttons, searching is dynamic.\n\n" +
+        "Revamped filtering. Removed buttons, filtering is dynamic.\n\n" +
         "Version 1.1.0\n" +
         "Added filter functionality\n    • You can now filter your memes!\n\n" +
         "Version 1.0.1\n" +
