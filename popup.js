@@ -3,6 +3,7 @@ var target = document.getElementById("img_target");
 var reset_btn = document.getElementById("reset_btn");
 var filter_input = document.getElementById("filter_input");
 var dark_mode_btn = document.getElementById("dark_mode");
+var dark = false;
 
 //Function that loads images.json from the storage
 //Don't even ask, it's JS magicfuckery..
@@ -47,6 +48,40 @@ function filter_fits(data) {
     return false;
 }
 
+//Function takes care of changing the theme
+function changeTheme(switch_) {
+    document.body.classList.toggle("dark");
+    var bulb_dark = document.getElementById("bulb_d");
+    var bulb_light = document.getElementById("bulb_l");
+    var eraser_dark = document.getElementById("eraser_d");
+    var eraser_light = document.getElementById("eraser_l");
+    if (document.body.classList.contains("dark")) {
+        bulb_dark.style.display = "none";
+        bulb_light.style.display = "block";
+        eraser_dark.style.display = "none";
+        eraser_light.style.display = "inline-block";
+    } else {
+        bulb_dark.style.display = "block";
+        bulb_light.style.display = "none";
+        eraser_dark.style.display = "inline-block";
+        eraser_light.style.display = "none";
+    }
+
+    if (switch_) {
+        if (document.cookie.split(";").length < 2) {
+            return;
+        }
+        if (document.cookie.split(";")[1].substr(6) == "false") {
+            document.cookie = "dark=true";
+            console.log("Changed to true");
+        } else {
+            document.cookie = "dark=false";
+            console.log("Changed to false");
+        }
+        dark = !dark;
+    }
+}
+
 //Function displays images according to the user query
 function searching() {
     target.innerHTML = ""; //Resetting the content of the div
@@ -89,8 +124,12 @@ reset_btn.addEventListener("click", function () {
     loadAll(); //Load all images
 })
 
-//Loading all images on document load
-document.addEventListener("load", loadAll());
+
+function test() {
+    changeTheme(); //Temporary workaround.. sets dark mode on launch
+    loadAll();
+    //checkCookies();
+}
 
 //If user starts typing without selecting
 //the field, select the field for him
@@ -100,9 +139,14 @@ document.addEventListener("keypress", function (e) {
     }
 })
 
+//Loading all images on document load
+document.addEventListener("load", test());
+
 //Show an alert with version updates
 version_button.addEventListener("click", function () {
     alert(
+        "Version 1.1.4\n" +
+        "Added new images.\nSet the dark mode as default.\n\n" +
         "Version 1.1.3\n" +
         "Added Dark Mode.\n\n" +
         "Version 1.1.2\n" +
@@ -120,20 +164,16 @@ version_button.addEventListener("click", function () {
 //Function changes document's body background
 //And changes button icons (white & black)
 dark_mode_btn.addEventListener("click", function () {
-    document.body.classList.toggle("dark");
-    var bulb_dark = document.getElementById("bulb_d");
-    var bulb_light = document.getElementById("bulb_l");
-    var eraser_dark = document.getElementById("eraser_d");
-    var eraser_light = document.getElementById("eraser_l");
-    if (document.body.classList.contains("dark")) {
-        bulb_dark.style.display = "none";
-        bulb_light.style.display = "block";
-        eraser_dark.style.display = "none";
-        eraser_light.style.display = "inline-block";
-    } else {
-        bulb_dark.style.display = "block";
-        bulb_light.style.display = "none";
-        eraser_dark.style.display = "inline-block";
-        eraser_light.style.display = "none";
-    }
+    changeTheme(true);
 })
+
+function checkCookies() {
+    var cookie = document.cookie;
+
+    if (cookie.split(";").length > 1) {
+        var temp = cookie.split(";")[1].substr(6);
+        if (temp != String(dark)) {
+            changeTheme(false);
+        }
+    }
+}

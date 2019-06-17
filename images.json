@@ -26,14 +26,29 @@
             "tags": ["bob", "wholesome", "ross", "cool", "liar", "lies", "scam"]
         },
 
+        "math": {
+            "name": "math",
+            "tags": ["math", "wut", "how", "what"]
+        },
+
         "sad_crying_cat": {
             "name": "sad_crying_cat",
             "tags": ["cat", "sad", "crying", "animal", "noo"]
         },
 
+        "catto": {
+            "name": "catto",
+            "tags": ["cat", "catto", "blush", "cringe", "eer", "umm"]
+        },
+
         "confused_wat": {
             "name": "confused_wat",
             "tags": ["confused", "black", "?", "wat", "wut", "uh", "damn"]
+        },
+
+        "wat": {
+            "name": "wat",
+            "tags": ["wat", "grandma", "wut", "what"]
         },
 
         "rtzW": {
@@ -54,6 +69,16 @@
         "be_gone": {
             "name": "be_gone",
             "tags": ["soldier", "gone", "away", "be gone", "begone"]
+        },
+
+        "surprised_pikachu": {
+            "name": "surprised_pikachu",
+            "tags": ["surprised", "pikachu", "wut", "what"]
+        },
+
+        "dank_jerry": {
+            "name": "dank_jerry",
+            "tags": ["dank", "jerry", "wut", "damn"]
         },
 
         "tom": {
@@ -79,6 +104,11 @@
         "pogchamp": {
             "name": "pogchamp",
             "tags": ["pog", "pogchamp", "kek"]
+        },
+
+        "we_smart": {
+            "name": "we_smart",
+            "tags": ["smart", "intelligent", "advice"]
         },
 
         "pathos": {
@@ -131,6 +161,11 @@
             "tags": ["lul", "kek", "funny"]
         },
 
+        "omegalul": {
+            "name": "omegalul",
+            "tags": ["omegalul", "lul", "kek", "dank"]
+        },
+
         "mega_lul": {
             "name": "mega_lul",
             "tags": ["mega", "lul", "funny"]
@@ -144,6 +179,16 @@
         "jack_black_stop": {
             "name": "jack_black_stop",
             "tags": ["jack", "black", "stop"]
+        },
+
+        "i_sleep": {
+            "name": "i_sleep",
+            "tags": ["i sleep", "sleep", "calm", "dank"]
+        },
+
+        "real_shit": {
+            "name": "real_shit",
+            "tags": ["real shit", "shit", "hyper", "mega", "dank"]
         },
 
         "wokeaf": {
