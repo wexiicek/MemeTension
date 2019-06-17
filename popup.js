@@ -84,6 +84,12 @@ reset_btn.addEventListener("click", function () {
 //Loading all images on document load
 document.addEventListener("load", loadAll());
 
+document.addEventListener("keypress", function (e) {
+    if (filter_input.value == '') {
+        filter_input.select();
+    }
+})
+
 version_button.addEventListener("click", function () {
     alert(
         "Version 1.1.2\n" +
