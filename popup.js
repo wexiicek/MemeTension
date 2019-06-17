@@ -1,15 +1,24 @@
-var filter_btn = document.getElementById("filter_btn");
-var filter_reset_btn = document.getElementById("filter_reset_btn");
 var version_button = document.getElementById("version");
 var target = document.getElementById("img_target");
-
-
-/*
-? For some reason, the filter input is empty and therefore
-? the search feature is not working at all
-*/
+var reset_btn = document.getElementById("reset_btn");
 var filter_input = document.getElementById("filter_input");
-//Function that loads all images in the storage
+
+//Function that loads images.json from the storage
+//Don't even ask, it's JS magicfuckery..
+//Provided by @Stano at https://stackoverflow.com/a/34579496
+function readTextFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+        }
+    }
+    rawFile.send(null);
+}
+
+//Function that loads all images located in json (and the storage)
 //into the HTML code
 function loadAll() {
     readTextFile("images.json", function (text) {
@@ -22,36 +31,6 @@ function loadAll() {
         }
     });
 }
-
-//Loading all images on document load
-document.addEventListener("load", loadAll());
-
-//Loading all images after the reset button is pressed
-filter_reset_btn.addEventListener("click", function () {
-    target.innerHTML = '';
-    loadAll();
-});
-
-version_button.addEventListener("click", function () {
-    alert(
-        "Version 1.1.0\n" +
-        "Added filter functionality\nYou can now filter your memes!\n\n" +
-        "Version 1.0.1\n" +
-        "Edited markup.\nConverted the app into CSS grid.\n"
-    );
-})
-
-//Loading selected images after filter button is pressed
-filter_btn.addEventListener("click", function () {
-    searching();
-})
-
-
-document.addEventListener("keypress", function (e) {
-    if (e.keyCode == 13) {
-        searching();
-    }
-})
 
 function searching() {
     target.innerHTML = ''; //Resetting the content of the div
@@ -79,23 +58,27 @@ function searching() {
         }
 
     });
-
-    //filter_input.value = ""; //Resetting the search bar
-    return;
 }
 
+filter_input.addEventListener("input", function () {
+    searching();
+});
 
+reset_btn.addEventListener("click", function () {
+    filter_input.value = "";
+    searching();
+})
 
-//Function that loads images.json from the storage
-//Don't even ask, it's JS magicfuckery..
-function readTextFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function () {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
-        }
-    }
-    rawFile.send(null);
-}
+//Loading all images on document load
+document.addEventListener("load", loadAll());
+
+version_button.addEventListener("click", function () {
+    alert(
+        "Version 1.1.1\n" +
+        "Revamped searching. Removed buttons, searching is dynamic.\n\n" +
+        "Version 1.1.0\n" +
+        "Added filter functionality\n    • You can now filter your memes!\n\n" +
+        "Version 1.0.1\n" +
+        "Edited markup.\nConverted the app into CSS grid.\n"
+    );
+})

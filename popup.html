@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-
     <style>
         html,
         body {
@@ -106,7 +104,7 @@
         }
 
         .modal-filter input {
-            flex: 3;
+            flex: 5;
             display: block;
             text-align: center;
             border: 1px solid #dadada;
@@ -122,7 +120,7 @@
         }
 
         .modal-filter button {
-            flex: 2;
+            flex: 1;
             background: transparent;
             border: 1px solid #dadada;
             border-radius: 5px;
@@ -138,11 +136,6 @@
             outline: none;
             background-color: #dddddd;
         }
-
-        #filter_reset_btn {
-            flex: 1;
-            width: 20px;
-        }
     </style>
 
 </head>
@@ -152,7 +145,7 @@
         <h1 class="logo">
             <div class="top">
                 <img src="logo.png" alt="Logo" class="logo-icon">
-                <h1> MemeTension </h1><button id="version">1.1.0</button>
+                <h1> MemeTension </h1><button id="version">1.1.1</button>
             </div>
             <p>by <a href="mailto:jurigadominik@gmail.com">wex</a>.</p>
         </h1>
@@ -167,8 +160,7 @@
 
     <div class="modal-filter">
         <input type="text" id="filter_input" placeholder="Filter..">
-        <button id="filter_btn">Search</button>
-        <button id="filter_reset_btn">Reset</button>
+        <button id="reset_btn"><img style="width: 16px;" src="/img/ico/eraser.png" alt=""></button>
     </div>
 
 
